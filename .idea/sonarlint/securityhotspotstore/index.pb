@@ -64,3 +64,5 @@ w
 G.idea/sonarlint/issuestore/4/9/496a238a6afa168dbaf6efd37bb459331589579c,6\e\6e9644ddf83ab52f39902ecdbfdf4118285ac40c
 w
 G.idea/sonarlint/issuestore/4/8/48a75a6832a8693490434e4998dea3b24dae84dd,0\9\0987601f7ceb47c735b40519d935e5a46096b098
+L
+src/FelhasznaloiFelulet.java,5\f\5fae14cd32ee9bbafac898a5e967fcbcca331890
