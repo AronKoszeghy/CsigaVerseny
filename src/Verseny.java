@@ -29,7 +29,7 @@ public class Verseny {
         if (random.nextInt(5) == 0) {
             Csiga gyorsitandoCsiga = versenyzok[random.nextInt(versenyzok.length)];
             gyorsitandoCsiga.gyorsitvaVan = true;
-//          System.out.println("---Juhuu, a " + gyorsitandoCsiga.getSzin() + " csiga dupla sebessegre valt!");
+//          System.out.println("---Juhuu, a " + gyorsitandoCsiga.getSzin() + " csiga felgyorsul!");
         }
     }
 

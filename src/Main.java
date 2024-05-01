@@ -14,8 +14,8 @@ public class Main {
 
         Verseny verseny = new Verseny(versenyzok, korokSzama);
 
-        UserInterface userInterface = new UserInterface(verseny);
-        userInterface.start();
+        FelhasznaloiFelulet felhasznaloiFelulet = new FelhasznaloiFelulet(verseny);
+        felhasznaloiFelulet.start();
 
     }
 }

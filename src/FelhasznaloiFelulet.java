@@ -1,12 +1,12 @@
 import java.util.List;
 import java.util.Scanner;
 
-public class UserInterface {
+public class FelhasznaloiFelulet {
 
     private Scanner scanner;
     private Verseny verseny;
 
-    public UserInterface(Verseny verseny) {
+    public FelhasznaloiFelulet(Verseny verseny) {
         this.verseny = verseny;
         this.scanner = new Scanner(System.in);
     }
