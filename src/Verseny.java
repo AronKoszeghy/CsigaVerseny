@@ -5,10 +5,12 @@ import java.util.Random;
 public class Verseny {
 
     private Csiga[] versenyzok;
+    private int korokSzama;
     private static Random random = new Random();
 
-    public Verseny(Csiga[] versenyzok) {
+    public Verseny(Csiga[] versenyzok, int korokSzama) {
         this.versenyzok = versenyzok;
+        this.korokSzama = korokSzama;
     }
 
     public void haladnakEgyKort() {
@@ -27,6 +29,7 @@ public class Verseny {
         if (random.nextInt(5) == 0) {
             Csiga gyorsitandoCsiga = versenyzok[random.nextInt(versenyzok.length)];
             gyorsitandoCsiga.gyorsitvaVan = true;
+//          System.out.println("---Juhuu, a " + gyorsitandoCsiga.getSzin() + " csiga dupla sebessegre valt!");
         }
     }
 
@@ -55,5 +58,7 @@ public class Verseny {
         return kiVezet;
     }
 
-
+    public int getKorokSzama() {
+        return korokSzama;
+    }
 }

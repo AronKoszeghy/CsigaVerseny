@@ -10,10 +10,11 @@ public class Main {
         Csiga kek = new Csiga("kek");
 
         Csiga[] versenyzok = {piros, zold, kek};
-        Verseny verseny = new Verseny(versenyzok);
         int korokSzama = 5;
 
-        UserInterface userInterface = new UserInterface(verseny, korokSzama);
+        Verseny verseny = new Verseny(versenyzok, korokSzama);
+
+        UserInterface userInterface = new UserInterface(verseny);
         userInterface.start();
 
     }

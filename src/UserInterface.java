@@ -5,16 +5,13 @@ public class UserInterface {
 
     private Scanner scanner;
     private Verseny verseny;
-    private int korokSzama;
 
-    public UserInterface(Verseny verseny, int korokSzama) {
+    public UserInterface(Verseny verseny) {
         this.verseny = verseny;
-        this.korokSzama = korokSzama;
         this.scanner = new Scanner(System.in);
     }
 
     public void start() {
-        System.out.println("Udvozollek a csigaversenyen! Fogadj, hogy melyik csiga fog nyerni! Ird be, hogy 'piros', 'zold' vagy 'kek'!");
         String tipp = tippeles();
         futam();
         List<String> gyoztesek = kiGyozott();
@@ -22,6 +19,7 @@ public class UserInterface {
     }
 
     private String tippeles() {
+        System.out.println("Udvozollek a csigaversenyen! Fogadj, hogy melyik csiga fog nyerni! Ird be, hogy 'piros', 'zold' vagy 'kek'!");
         String tipp = scanner.nextLine();
         while (!tippValidalva(tipp)) {
             System.out.println("Ilyen szinu versenyzo nincs. Ird be ujra, hogy 'piros', 'zold' vagy 'kek'!");
@@ -36,9 +34,10 @@ public class UserInterface {
                 || tipp.equals("kek");
     }
 
-    private void futam() {
+    public void futam() {
         System.out.println("Kezdodik a verseny. Nyomj entert amig a verseny veget nem er!");
         int kor = 1;
+        int korokSzama = verseny.getKorokSzama();
         while (kor <= korokSzama) {
             scanner.nextLine();
             verseny.haladnakEgyKort();
