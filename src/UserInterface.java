@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -14,11 +15,10 @@ public class UserInterface {
 
     public void start() {
         System.out.println("Udvozollek a csigaversenyen! Fogadj, hogy melyik csiga fog nyerni! Ird be, hogy 'piros', 'zold' vagy 'kek'!");
-
         String tipp = tippeles();
-
-        System.out.println("Kezdodik a verseny. Nyomj entert amig a verseny veget nem er!");
-        kovetkezoKor();
+        futam();
+        List<String> gyoztesek = kiGyozott();
+        eredmenyHirdetes(gyoztesek, tipp);
     }
 
     private String tippeles() {
@@ -31,18 +31,38 @@ public class UserInterface {
     }
 
     private boolean tippValidalva(String tipp) {
-        return !(tipp.equals("piros")
+        return tipp.equals("piros")
                 || tipp.equals("zold")
-                || tipp.equals("kek"));
+                || tipp.equals("kek");
     }
 
-    private void kovetkezoKor() {
-        int kor = 0;
+    private void futam() {
+        System.out.println("Kezdodik a verseny. Nyomj entert amig a verseny veget nem er!");
+        int kor = 1;
         while (kor <= korokSzama) {
             scanner.nextLine();
             verseny.haladnakEgyKort();
-            System.out.println(kor + ". allasa:\n");
+            System.out.print(kor + ". kor:\n");
+            System.out.print(verseny.allas());
             kor++;
+        }
+    }
+
+    private List<String> kiGyozott() {
+        List<String> gyoztesek = verseny.kiVezet();
+        if (gyoztesek.size() == 1) {
+            System.out.println("\nA " + gyoztesek.get(0) + " csiga gyozott!");
+        } else {
+            System.out.println("\nGyoztes csigak: " + gyoztesek);
+        }
+        return gyoztesek;
+    }
+
+    private void eredmenyHirdetes(List<String> gyoztesek, String tipp) {
+        if (gyoztesek.contains(tipp)) {
+            System.out.println("Jol tippeltel! :)");
+        } else {
+            System.out.println("Rosszul tippeltel! :(");
         }
     }
 }

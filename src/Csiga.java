@@ -2,7 +2,7 @@ public class Csiga {
 
     private String szin;
     private int megtettTavolsag;
-    public boolean gyorsitvaVan;
+    protected boolean gyorsitvaVan;
 
     public Csiga(String szin) {
         this.szin = szin;
@@ -15,14 +15,15 @@ public class Csiga {
     }
 
     public String toString() {
-        return "Csiga{" +
-                "szin='" + getSzin() + '\'' +
-                ", megtettTavolsag=" + megtettTavolsag +
-                '}';
+        return szin + " csiga: " + megtettTavolsag;
     }
 
     public void halad(int sebesseg) {
         megtettTavolsag += sebesseg;
+    }
+
+    public int getMegtettTavolsag() {
+        return  megtettTavolsag;
     }
 
 

@@ -5,11 +5,11 @@
 public class Main {
     public static void main(String[] args) {
 
-        Csiga pirosCsiga = new Csiga("piros");
-        Csiga zoldCsiga = new Csiga("zold");
-        Csiga kekCsiga = new Csiga("kek");
+        Csiga piros = new Csiga("piros");
+        Csiga zold = new Csiga("zold");
+        Csiga kek = new Csiga("kek");
 
-        Csiga[] versenyzok = {pirosCsiga, zoldCsiga, kekCsiga};
+        Csiga[] versenyzok = {piros, zold, kek};
         Verseny verseny = new Verseny(versenyzok);
         int korokSzama = 5;
 
